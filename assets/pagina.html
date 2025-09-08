@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Ejemplo</title>
+  <!-- Enlace a hoja de estilos externa para separar presentación de estructura -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 
+    Explicación:
+    - Se utiliza <link> para importar CSS externo, separando estructura y presentación.
+    - <meta> para definir codificación y diseño adaptable.
+    - <title> para el nombre de la pestaña.
+  -->
+</head>
+<body>
+  <!-- 
+    <header> etiqueta semántica para el encabezado principal.
+    <h1> con id="titulo" permite manipulación por CSS y JS.
+  -->
+  <header>
+    <h1 id="titulo">Pagina Evaluacion 1</h1>
+  </header>
+
+  <!-- 
+    <main> etiqueta semántica para el contenido principal.
+    Se agrupan secciones temáticas usando <section>.
+  -->
+  <main>
+    <section>
+      <h2>Bienvenido</h2>
+      <p>
+        Hola, acá se usan el <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>. 
+        Toca los botones para la <strong>manipulación del DOM</strong>.
+      </p>
+      <!-- 
+        Botones que llaman funciones JS:
+        - cambiarFondo(color): cambia el color de fondo usando parámetro.
+        - cambiarTexto(): alterna el texto y estilo del título.
+      -->
+      <button onclick="cambiarFondo('lightblue')">Fondo Azul Claro</button>
+      <button onclick="cambiarFondo('lightgreen')">Fondo Verde Claro</button>
+      <button onclick="cambiarTexto()">Cambiar Texto</button>
+    </section>
+
+    <section>
+      <h2>Formulario de contacto</h2>
+      <!-- 
+        Formulario con validación:
+        - onsubmit llama a validarFormulario() en JS.
+        - Se usa required en el input para validación HTML.
+        - <span id="mensaje"> muestra mensajes de error.
+      -->
+      <form id="formulario" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <button type="submit">Enviar</button>
+        <span id="mensaje" style="color:red;"></span>
+      </form>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería de imágenes</h2>
+      <!-- 
+        Galería de imágenes:
+        - Se usa la clase "imagen" para dar tamaño y orden uniforme con CSS.
+        - Las imágenes están en la carpeta img/.
+      -->
+      <div class="galeria">
+        <img src="img/ejemplo1.jpg" class="imagen" alt="Imagen de ejemplo 1">
+        <img src="img/ejemplo2.jpg" class="imagen" alt="Imagen de ejemplo 2">
+        <img src="img/ejemplo3.jpg" class="imagen" alt="Imagen de ejemplo 3">
+        <img src="img/ejemplo4.jpg" class="imagen" alt="Imagen de ejemplo 4">
+      </div>
+    </section>
+  </main>
+
+  <!-- 
+    <footer> etiqueta semántica para el pie de página.
+    Incluye derechos de autor.
+  -->
+  <footer>
+    <p>&copy; 2025 - PUCV</p>
+  </footer>
+
+  <!-- 
+    Inclusión de JS externo para interactividad y manipulación del DOM.
+    El archivo script.js contiene funciones para cambiar fondo y texto.
+  -->
+  <script src="js/script.js"></script>
+  <!-- 
+    Script adicional para validación de formulario:
+    - validarFormulario() verifica que el campo nombre no esté vacío.
+    - Manipula el DOM mostrando mensajes y alertas.
+  -->
+  <script>
+    // Validación básica de formulario usando JS y manipulación del DOM
+    function validarFormulario() {
+      const nombre = document.getElementById('nombre').value;
+      const mensaje = document.getElementById('mensaje');
+      if (nombre.trim() === '') {
+        mensaje.textContent = 'Por favor ingresa tu nombre.';
+        return false;
+      }
+      mensaje.textContent = '';
+      alert('Formulario enviado correctamente');
+      return true;
+    }
+  </script>
+</body>
+</html>

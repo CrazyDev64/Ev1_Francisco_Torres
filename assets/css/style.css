@@ -1,0 +1,42 @@
+/* 
+  Selector por etiqueta:
+  Aplica estilos globales al body, define fuente, elimina márgenes y centra el texto.
+*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* 
+  Selector por clase:
+  .resaltado se usa para destacar el título cuando se activa con JS.
+*/
+.resaltado {
+  color: red;
+  font-weight: bold;
+}
+
+/* 
+  Selector por ID:
+  #titulo estiliza el encabezado principal, usando fondo azul y texto blanco.
+*/
+#titulo {
+  background: #007BFF;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* 
+  Selector por clase:
+  .imagen se usa en la galería para que todas las imágenes tengan el mismo tamaño y estén ordenadas horizontalmente.
+*/
+.imagen {
+  width: 200px;      /* Ajusta el ancho */
+  height: 150px;     /* Ajusta la altura */
+  object-fit: cover; /* Recorta la imagen si es necesario */
+  margin: 10px;      /* Espacio entre imágenes */
+  display: inline-block; /* Orden horizontal */
+}
