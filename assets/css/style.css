@@ -1,3 +1,12 @@
+/* Footer fijo al borde inferior */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
 /* 
   Selector por etiqueta:
   Aplica estilos globales al body, define fuente, elimina márgenes y centra el texto.
@@ -7,6 +16,12 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  border: 5px solid black;
+  box-shadow: inset 0 100px 10px rgba(0, 0, 0, 0.5);
+  display:block;
+  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+  width: 100vw;      /* Ocupa el 100% del ancho de la ventana */
+  box-sizing: border-box;
 }
 
 /* 
@@ -23,10 +38,13 @@ body {
   #titulo estiliza el encabezado principal, usando fondo azul y texto blanco.
 */
 #titulo {
-  background: #007BFF;
   color: white;
   padding: 1rem;
   border-radius: 8px;
+  background-image: url('../img/ejemplo6.jpg'); /* Cambia el nombre si quieres otra imagen */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* 
@@ -36,7 +54,7 @@ body {
 .imagen {
   width: 200px;      /* Ajusta el ancho */
   height: 150px;     /* Ajusta la altura */
-  object-fit: cover; /* Recorta la imagen si es necesario */
+  object-fit:fill; /* Recorta la imagen si es necesario */
   margin: 10px;      /* Espacio entre imágenes */
   display: inline-block; /* Orden horizontal */
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Ejemplo</title>
+  <title>pagina</title>
   <!-- Enlace a hoja de estilos externa para separar presentación de estructura -->
   <link rel="stylesheet" href="css/style.css">
   <!-- 
@@ -38,8 +38,8 @@
         - cambiarFondo(color): cambia el color de fondo usando parámetro.
         - cambiarTexto(): alterna el texto y estilo del título.
       -->
-      <button onclick="cambiarFondo('lightblue')">Fondo Azul Claro</button>
-      <button onclick="cambiarFondo('lightgreen')">Fondo Verde Claro</button>
+      <button onclick="cambiarFondo('#6399E0')">Fondo Azul Claro</button>
+      <button onclick="cambiarFondo('#23661F')">Fondo Verde Oscuro</button>
       <button onclick="cambiarTexto()">Cambiar Texto</button>
     </section>
 
@@ -80,7 +80,7 @@
     Incluye derechos de autor.
   -->
   <footer>
-    <p>&copy; 2025 - PUCV</p>
+    <p>&copy; 2025 - PUCV - Francisco Torres</p>
   </footer>
 
   <!-- 
@@ -88,24 +88,7 @@
     El archivo script.js contiene funciones para cambiar fondo y texto.
   -->
   <script src="js/script.js"></script>
-  <!-- 
-    Script adicional para validación de formulario:
-    - validarFormulario() verifica que el campo nombre no esté vacío.
-    - Manipula el DOM mostrando mensajes y alertas.
-  -->
-  <script>
-    // Validación básica de formulario usando JS y manipulación del DOM
-    function validarFormulario() {
-      const nombre = document.getElementById('nombre').value;
-      const mensaje = document.getElementById('mensaje');
-      if (nombre.trim() === '') {
-        mensaje.textContent = 'Por favor ingresa tu nombre.';
-        return false;
-      }
-      mensaje.textContent = '';
-      alert('Formulario enviado correctamente');
-      return true;
-    }
-  </script>
+
+
 </body>
 </html>

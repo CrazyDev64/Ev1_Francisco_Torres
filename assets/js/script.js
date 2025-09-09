@@ -20,3 +20,22 @@ function cambiarTexto() {
   }
 }
 
+/*
+    Script adicional para validación de formulario:
+    - validarFormulario() verifica que el campo nombre no esté vacío.
+    - Manipula el DOM mostrando mensajes y alertas.
+    - Validación básica de formulario usando JS y manipulación del DOM
+    - Impide el envío si el campo está vacío y muestra un mensaje de error; si el campo tiene texto, muestra una alerta y permite el envío.
+*/
+function validarFormulario() {
+  const nombre = document.getElementById('nombre').value;
+  const mensaje = document.getElementById('mensaje');
+  if (nombre.trim() === '') {
+    mensaje.textContent = 'Ingresa tu nombre.';
+    return false;
+  }
+  mensaje.textContent = '';
+  alert('Se envió con éxito, ' + nombre + '!');
+  return true;
+}
+
